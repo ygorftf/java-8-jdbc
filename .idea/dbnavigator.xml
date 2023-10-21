@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -12,7 +12,7 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="4890e30f-1c58-458a-9957-590dc44c7604">
+    <connection id="66c8b1f1-2116-4e0f-b5c8-708678e9bcea">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
@@ -22,13 +22,27 @@
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="66c8b1f1-2116-4e0f-b5c8-708678e9bcea" dataset="coursejdbc.seller" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
+  </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="4890e30f-1c58-458a-9957-590dc44c7604" active="true" signed="true">
+      <connection id="66c8b1f1-2116-4e0f-b5c8-708678e9bcea" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -45,14 +59,11 @@
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
-          <user value="hugo" />
-          <deprecated-pwd value="SHVnb0AxMjM=" />
+          <user value="ygorftf" />
+          <deprecated-pwd value="cGFzc3dvcmQ=" />
         </database>
         <properties>
           <auto-commit value="false" />
-          <properties>
-            <property key="serverTimezone" value="" />
-          </properties>
         </properties>
         <ssh-settings>
           <active value="false" />
