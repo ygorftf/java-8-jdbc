@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat;
 public class Main {
     public static void main(String[] args) {
 
-        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
         Connection conn = null;
         PreparedStatement st = null;
 
@@ -17,33 +16,19 @@ public class Main {
             conn = DB.getConnection();
 
             st = conn.prepareStatement(
-                    "INSERT INTO seller " +
-                    "(Name, Email, BirthDate, BaseSalary, DepartmentId) " +
-                    "VALUES" +
-                    "(?, ?, ?, ?, ?)",
-                    Statement.RETURN_GENERATED_KEYS);
+                    "UPDATE seller " +
+                    "SET BaseSalary = BaseSalary + ? " +
+                    "WHERE " +
+                    "(DepartmentId = ?)");
 
-            st.setString(1,"Ygor Torres");
-            st.setString(2,"ygor@gmail.com");
-            st.setDate(3,new Date(fmt.parse("24/06/1996").getTime()));
-            st.setDouble(4,30000.0);
-            st.setInt(5,4);
+            st.setDouble(1,200.0);
+            st.setInt(2,2);
 
             int rowsAffected = st.executeUpdate();
 
-            if(rowsAffected > 0){
-                ResultSet rs = st.getGeneratedKeys();
-                while (rs.next()){
-                    int id = rs.getInt(1);
-                    System.out.println("Done! Id = " + id);
-                }
-            }else {
-                System.out.println("No row affected!");
-            }
+            System.out.println("Done! rows affected: " + rowsAffected);
 
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ParseException e){
             e.printStackTrace();
         } finally {
             DB.closeStatement(st);
